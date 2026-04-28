@@ -134,7 +134,7 @@ async def push_to_obsidian_channel(bot: Bot, markdown_note: str, filename: str):
         await bot.send_message(
             chat_id    = OUTPUT_CHANNEL_ID,
             text       = markdown_note,
-            parse_mode = "Markdown",
+            parse_mode = "None",
         )
     else:
         # Send in chunks
@@ -144,7 +144,7 @@ async def push_to_obsidian_channel(bot: Bot, markdown_note: str, filename: str):
             await bot.send_message(
                 chat_id    = OUTPUT_CHANNEL_ID,
                 text       = prefix + chunk,
-                parse_mode = "Markdown",
+                parse_mode = "None",
             )
             await asyncio.sleep(0.5)
 
